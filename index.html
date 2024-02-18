@@ -38,7 +38,8 @@
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="bg-green-100 text-green-500 border-green-300 btn"><img src="icons/bus-icon.svg" alt="">
+                <a href="#bus" class="bg-green-100 text-green-500 border-green-300 btn"><img src="icons/bus-icon.svg"
+                        alt="">
                     Bus</a>
             </div>
         </div>
@@ -51,7 +52,8 @@
                     <h1 class="mb-5 text-5xl font-bold">End-to-End Travel with</h1>
                     <h1 class="mb-5 text-5xl font-bold text-green-500">P H Paribahan</h1>
                     <p class="mb-5">We'll make it easy for you! Get the lowest prices, and renowned bus operators</p>
-                    <button class="btn btn-primary bg-green-500 hover:bg-green-600 border-none text-black">Buy
+                    <button onclick="selectYourSeat()"
+                        class="btn btn-primary bg-green-500 hover:bg-green-600 border-none text-black">Buy
                         Tickets</button>
                 </div>
             </div>
@@ -136,7 +138,7 @@
             </div>
 
 
-            <div class="card flex flex-col md:flex-row bg-white p-10">
+            <div id="bus" class="card flex flex-col md:flex-row bg-white p-10">
                 <div class="left flex-1">
                     <div>
                         <div class="flex justify-between">
@@ -149,7 +151,7 @@
                             </div>
                             <div class="bg-green-100 px-3 py-4 flex w-40 items-center space-x-2 rounded-lg">
                                 <img src="icons/seat-green.svg" alt="">
-                                <p><span>40</span> Seats left</p>
+                                <p><span id="total-seats">40</span> Seats left</p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +184,7 @@
 
 
         <!-- Bus seat section -->
-        <div class="container mx-auto px-2 bg-white mt-10 rounded-xl p-10">
+        <div id="select-your-seat" class="container mx-auto px-2 bg-white mt-10 rounded-xl p-10">
             <div class="grid grid-cols-1 md:grid-cols-3 px-3">
                 <!-- Select your Seat -->
                 <div class="col-span-1 md:col-span-2 border-r-4 border-dashed">
@@ -376,21 +378,15 @@
                         <div class="mx-5 py-5">
                             <div>
                                 <div class="flex justify-between border-b-2 border-dashed pb-5 mx-4">
-                                    <div>Seat <span class="bg-green-400 text-white px-2 rounded-xl">0</span></div>
+                                    <div>Seat <span id="purchase-seat" class="bg-green-400 text-white px-2 rounded-xl">0</span></div>
                                     <div>Class</div>
                                     <div>Price</div>
                                 </div>
                                 <div>
-                                    <div class="grid grid-cols-3 gap-4 border-b border-gray-900">
-                                        <div>A1</div>
+                                    <div id="purchase-ticket-list" class="grid grid-cols-3 gap-4 border-b border-gray-900">
+                                        <!-- <div>A1</div>
                                         <div>Economy</div>
-                                        <div>550 Taka</div>
-                                        <div>A1</div>
-                                        <div>Economy</div>
-                                        <div>550 Taka</div>
-                                        <div>A1</div>
-                                        <div>Economy</div>
-                                        <div>550 Taka</div>
+                                        <div>550 Taka</div> -->
                                     </div>
                                 </div>
                                 <div class="flex justify-between pt-4 mr-10">
@@ -505,6 +501,12 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        function selectYourSeat() {
+            var elmntToView = document.getElementById("select-your-seat")
+            elmntToView.scrollIntoView()
+        }
+    </script>
 </body>
 
 </html>
