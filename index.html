@@ -378,12 +378,14 @@
                         <div class="mx-5 py-5">
                             <div>
                                 <div class="flex justify-between border-b-2 border-dashed pb-5 mx-4">
-                                    <div>Seat <span id="purchase-seat" class="bg-green-400 text-white px-2 rounded-xl">0</span></div>
+                                    <div>Seat <span id="purchase-seat"
+                                            class="bg-green-400 text-white px-2 rounded-xl">0</span></div>
                                     <div>Class</div>
                                     <div>Price</div>
                                 </div>
                                 <div>
-                                    <div id="purchase-ticket-list" class="grid grid-cols-3 gap-4 border-b border-gray-900">
+                                    <div id="purchase-ticket-list"
+                                        class="grid grid-cols-3 gap-4 border-b border-gray-900">
                                         <!-- <div>A1</div>
                                         <div>Economy</div>
                                         <div>550 Taka</div> -->
@@ -391,19 +393,19 @@
                                 </div>
                                 <div class="flex justify-between pt-4 mr-10">
                                     <h2>Total Price</h2>
-                                    <h2>BTD <span>1100</span></h2>
+                                    <h2>BTD <span id="total-price">00</span></h2>
                                 </div>
 
-                                <div class="mt-5">
+                                <div id="coupon-container" class="mt-5">
                                     <label class="input flex items-center gap-2 xpx-2 pt-2 pb-2 px-2 border-none">
-                                        <input type="text" class="grow" placeholder="Have any coupon" />
-                                        <span class="btn bg-green-400">Apply</span>
+                                        <input id="coupon" type="text" class="grow" placeholder="Have any coupon" />
+                                        <button id="coupon-button" class="btn bg-green-400">Apply</button>
                                     </label>
                                 </div>
 
                                 <div class="flex justify-between pt-4 mr-10">
                                     <h2>Grand Total</h2>
-                                    <h2>BTD <span>1100</span></h2>
+                                    <h2>BTD <span id="grand-total">00</span></h2>
                                 </div>
                             </div>
                         </div>
@@ -425,7 +427,7 @@
                                 <div class="label">
                                     <span class="label-text text-xl font-bold">Phone Numebr*</span>
                                 </div>
-                                <input type="text" placeholder="Enter your phone number"
+                                <input id="phone-number" type="number" placeholder="Enter your phone number"
                                     class="input input-bordered w-full xmax-w-xs" />
                             </label>
 
@@ -433,12 +435,21 @@
                                 <div class="label">
                                     <span class="label-text text-xl font-bold">Email ID</span>
                                 </div>
-                                <input type="text" placeholder="Enter your email id"
+                                <input type="email" placeholder="Enter your email id"
                                     class="input input-bordered w-full xmax-w-xs" />
                             </label>
 
                             <label for="form-control">
-                                <button class="btn w-full bg-green-400">Next</button>
+                                <button id="next-button" onclick="my_modal_1.showModal()"
+                                    class="btn w-full bg-green-400 cursor-not-allowed" disabled>Next</button>
+                                <dialog id="my_modal_1" class="modal">
+                                    <div class="modal-box flex flex-col justify-center items-center">
+                                        <img class="w-20" src="images/success.png" alt="">
+                                        <h2>Success</h2>
+                                        <p>Thank you for booking our Bus Seats</p>
+                                       <button class="btn bg-green-400">Continue</button>
+                                    </div>
+                                </dialog>
                             </label>
                         </form>
 
