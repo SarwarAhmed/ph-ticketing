@@ -5,7 +5,7 @@ for (let seat of seats) {
     seat.addEventListener('click', function () {
         selectedSeats += 1;
 
-        if (selectedSeats <= 4) {
+        if (selectedSeats <= 4 && seat.classList.contains('bg-green-500') === false) {
             let totalSeats = document.getElementById('total-seats').innerText;
             totalSeats = parseInt(totalSeats);
 
@@ -13,6 +13,9 @@ for (let seat of seats) {
             document.getElementById('total-seats').innerText = totalSeats;
 
             seat.classList.add('bg-green-500');
+            if (seat.classList.contains('bg-green-500') === true) {
+                seat.setAttribute('disabled', 'disabled');
+            }
 
 
             purchaseSeat = document.getElementById('purchase-seat');
@@ -38,7 +41,7 @@ for (let seat of seats) {
 
             // if sleceted seats is more than 1 and phone number is not empty then active next button
             let phoneNumber = document.getElementById('phone-number').value;
-            if ( phoneNumber !== "" && selectedSeats > 0 && phoneNumber !== "") {
+            if (phoneNumber !== "" && selectedSeats > 0 && phoneNumber !== "") {
                 document.getElementById('next-button').classList.remove('cursor-not-allowed');
                 document.getElementById('next-button').removeAttribute('disabled', 'disabled');
             }
