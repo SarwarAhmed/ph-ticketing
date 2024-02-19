@@ -39,7 +39,6 @@ for (let seat of seats) {
             totalPrice += 550;
             document.getElementById('total-price').innerText = totalPrice;
 
-            // if sleceted seats is more than 1 and phone number is not empty then active next button
             let phoneNumber = document.getElementById('phone-number').value;
             if (phoneNumber !== "" && selectedSeats > 0 && phoneNumber !== "") {
                 document.getElementById('next-button').classList.remove('cursor-not-allowed');
@@ -85,6 +84,5 @@ for (let seat of seats) {
             document.getElementById('grand-total').innerText = grandTotal;
 
         }
-
     });
 }
